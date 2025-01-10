@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Fantacalcio con Giustificazioni</title>
+</head>
+<body>
+    <h1>Fantacalcio</h1>
+    <form action="app.php" method="POST">
+        <h2>Squadra 1: Squadra A</h2>
+        <fieldset>
+            <legend>Giocatori Squadra A</legend>
+            <label><input type="checkbox" name="justified_a[]" value="Salvo Gabriele"> Salvo Gabriele</label>
+            <label><input type="checkbox" name="justified_a[]" value="Barindelli Manuel"> Barindelli Manuel</label>
+            <label><input type="checkbox" name="justified_a[]" value="Narciso Nicolò"> Narciso Nicolò</label>
+            <label><input type="checkbox" name="justified_a[]" value="Bramani Laura"> Bramani Laura</label>
+            <label><input type="checkbox" name="justified_a[]" value="Ghisolfi Andrea"> Ghisolfi Andrea</label>
+            <label><input type="checkbox" name="justified_a[]" value="Palazzo David"> Palazzo David</label>
+            <label><input type="checkbox" name="justified_a[]" value="Zorzan Sara"> Zorzan Sara</label>
+            <label><input type="checkbox" name="justified_a[]" value="Tonet Matteo"> Tonet Matteo</label>
+            <label><input type="checkbox" name="justified_a[]" value="Yachou Yassin"> Yachou Yassin</label>
+        </fieldset>
+
+        <h2>Squadra 2: Squadra B</h2>
+        <fieldset>
+            <legend>Giocatori Squadra B</legend>
+            <label><input type="checkbox" name="justified_b[]" value="Gumiero Alessandro"> Gumiero Alessandro</label>
+            <label><input type="checkbox" name="justified_b[]" value="Locatelli Daniele"> Locatelli Daniele</label>
+            <label><input type="checkbox" name="justified_b[]" value="Rigamonti Andrea Umer"> Rigamonti Andrea Umer</label>
+            <label><input type="checkbox" name="justified_b[]" value="Fontana Michele"> Fontana Michele</label>
+            <label><input type="checkbox" name="justified_b[]" value="Mascheroni Martina"> Mascheroni Martina</label>
+            <label><input type="checkbox" name="justified_b[]" value="Bodlli Matteo"> Bodlli Matteo</label>
+            <label><input type="checkbox" name="justified_b[]" value="Ricali Lorenzo"> Ricali Lorenzo</label>
+            <label><input type="checkbox" name="justified_b[]" value="Jabir Ali"> Jabir Ali</label>
+        </fieldset>
+
+        <label for="score1">Punteggio Squadra A:</label>
+        <input type="number" name="score1" id="score1" required>
+
+        <label for="score2">Punteggio Squadra B:</label>
+        <input type="number" name="score2" id="score2" required>
+
+        <button type="submit">Registra Partita</button>
+    </form>
+
+    <h2>Storico Partite</h2>
+    <ul id="match-history">
+        <?php include 'app.php'; echo loadMatchHistory(); ?>
+    </ul>
+</body>
+</html>
